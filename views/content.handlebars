@@ -1,0 +1,30 @@
+<div class="">
+  <div class="table-responsive">
+    <table id="keyword-table" class="display nowrap" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th>Keyword</th>
+          <th>Search Volume</th>
+        </tr>
+      </thead>
+      {{#each keywords.entries}}
+      <tr>
+        {{#each this.data}}
+        <td><p>{{value.value}}</p></td>
+        {{/each}}
+      </tr>
+       {{/each}}
+    </table>
+    <div id="btn_export">
+      <!-- <button type="button" name="button" class="btn-primary">Export</button> -->
+    </div>
+  </div>
+</div>
+
+<!-- <div id="modal_export" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="modal_export">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div> -->

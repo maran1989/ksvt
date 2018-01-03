@@ -1,0 +1,61 @@
+
+{{#if errors}}
+{{#each errors}}
+<div class="alert alert-danger">{{msg}}</div>
+{{/each}}
+{{/if}}
+<form class="" action="/users/register" method="post">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <h3 class="header">User Information</h3>
+    <div class="form-group">
+      <label class="form-control-static">Name</label>
+      <input type="text" class="form-control" placeholder="Name" name="name">
+    </div>
+    <div class="form-group">
+      <label class="form-control-static">Username</label>
+      <input type="text" class="form-control" placeholder="Username" name="username">
+    </div>
+    <div class="form-group">
+      <label class="form-control-static">Email</label>
+      <input type="email" class="form-control" placeholder="Email" name="email">
+    </div>
+    <div class="form-group">
+      <label class="form-control-static">Password</label>
+      <input type="password" class="form-control" placeholder="Password" name="password">
+    </div>
+    <div class="form-group">
+      <label class="form-control-static">Confirm Password</label>
+      <input type="password" class="form-control" placeholder="Password" name="password2">
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <h3 class="header">Google Credentials</h3>
+    <div class="form-group">
+      <label class="form-control-static">Client Customer Id</label>
+      <input type="text" class="form-control" placeholder="Client Customer Id" name="client_customer_id">
+    </div>
+    <div class="form-group">
+      <label class="form-control-static">Developer Token</label>
+      <input type="text" class="form-control" placeholder="Developer Token" name="developer_token">
+    </div>
+    <div class="form-group">
+      <label class="form-control-static">OAuth2 Client Id</label>
+      <input type="text" class="form-control" placeholder="OAuth2 Client Id" name="oauth2_client_id">
+    </div>
+    <div class="form-group">
+      <label class="form-control-static">OAuth2 Client Secret</label>
+      <input type="text" class="form-control" placeholder="OAuth2 Client Secret" name="oauth2_client_secret">
+    </div>
+    <div class="form-group">
+      <label class="form-control-static">OAuth2 Refresh Token</label>
+      <input type="text" class="form-control" placeholder="OAuth2 Refresh Token" name="oauth2_refresh_token">
+    </div>
+    <div>
+      <button type="submit" class="btn btn-success">Submit</button>
+      <a href="/users/login" style="margin-left: 10px;">Already have an acount?</a>
+    </div>
+
+  </div>
+
+</form>
