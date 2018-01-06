@@ -2,9 +2,9 @@
   "name": "ksvt",
   "version": "1.0.0",
   "description": "Keyword Search Volume Tool",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node app.js",
     "deploy": "KSVT App",
     /* "test": "echo \"Error: no test specified\" && exit 1" */
   },
