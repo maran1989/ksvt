@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "deploy": "KSVT App",
-    /* "test": "echo \"Error: no test specified\" && exit 1" */
+    "deploy": "KSVT App"
   },
   "author": "MaC",
   "license": "ISC",

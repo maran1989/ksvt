@@ -102,6 +102,10 @@ var table = $('#keyword-table').DataTable({
 });
 table.buttons().container().appendTo('#btn_export');
 
+$('#btn_export').click(function(){
+  window.location.href = "/";
+});
+
 $('#excel_file').change(handleFile);
 var rABS = true; // true: readAsBinaryString ; false: readAsArrayBuffer
 function handleFile(e) {
