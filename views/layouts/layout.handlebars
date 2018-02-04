@@ -81,11 +81,24 @@
 <script lang="javascript" src="/js/shim.js"></script>
 <script lang="javascript" src="/js/xlsx.full.min.js"></script>
 <script type="text/javascript">
-function uploadFile() {
-  $("#excel_file").click();
-};
-
+var keywords;
+var current_loc;
 var table = $('#keyword-table').DataTable({
+  "processing": true,
+  "ajax": {
+      "url": "/keywords/getcontent/",
+      "type": "POST",
+      "data": {
+        keywords: keywords,
+        location: current_loc
+      }
+  },
+  "columns": [
+      { "title": "Keyword", "data": "keyword_text" },
+      { "title": "Search Volume", "data": "search_volume" },
+      { "title": "Average CPC", "data": "average_cpc" },
+      { "title": "Competition", "data": "competition"}
+  ],
   dom: 'Blfrtip',
   buttons: [
     {
@@ -101,6 +114,10 @@ var table = $('#keyword-table').DataTable({
   ]
 });
 table.buttons().container().appendTo('#btn_export');
+
+$('#upload_file').click(function(){
+ $("#excel_file").click();
+});
 
 $('#btn_export').click(function(){
   window.location.href = "/";
@@ -134,9 +151,21 @@ function handleFile(e) {
         }
       }
     });
+    result = removeDuplicates(result);
     $('#keywords').val(result.join(''));
+    //console.log(result);
   };
   if(rABS) reader.readAsBinaryString(f); else reader.readAsArrayBuffer(f);
+}
+
+function removeDuplicates(arr) {
+  let unique_array = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(unique_array.indexOf(arr[i]) == -1)  {
+      unique_array.push(arr[i]);
+    }
+  }
+  return unique_array;
 }
 </script>
 </html>

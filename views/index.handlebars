@@ -6,9 +6,8 @@
       <div class="w3-col" style="width: 80%;">
         <textarea class="w3-input w3-border" rows="20" id="keywords" name="keywords" placeholder="Enter Keywords"></textarea>
         <input type="file" id="excel_file" name="excel_file" style="display:none" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
-        <p><button id="uploadfile" class="w3-input w3-border" type="button" onclick="uploadFile()">Upload a File</button></p>
-        <select class="w3-input w3-border" name="location">
-          <option value="" disabled selected>Choose your location</option>
+        <p><button id="upload_file" name="upload_file" class="w3-input w3-border" type="button">Upload a File</button></p>
+        <select class="w3-input w3-border" id="location" name="location">
           {{#each locations}}
           <option value={{id}}>{{name}}</option>
           {{/each}}
